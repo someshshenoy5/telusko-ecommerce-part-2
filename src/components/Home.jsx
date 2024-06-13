@@ -84,12 +84,12 @@ const Home = ({ selectedCategory }) => {
                 className="card mb-3"
                 style={{
                   width: "18rem",
-                  height: "24rem",
+                  height: "13rem",
                   boxShadow: "rgba(0, 0, 0, 0.24) 0px 2px 3px",
                   backgroundColor: productAvailable ? "#fff" : "#ccc",
                   margin: "10px",
                   display: "flex",
-                  flexDirection: "column",
+                  flexDirection: "center",
                 }}
                 key={id}
               >
@@ -97,7 +97,7 @@ const Home = ({ selectedCategory }) => {
                   to={`/product/${id}`}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <img
+                  {/* <img
                     src={imageUrl}
                     alt={name}
                     style={{
@@ -107,8 +107,8 @@ const Home = ({ selectedCategory }) => {
                       padding: "5px",
                       margin: "0",
                     }}
-                  />
-                  <div
+                  />  */}
+                  {/* <div
                     className="buttons"
                     style={{
                       position: "absolute",
@@ -121,7 +121,7 @@ const Home = ({ selectedCategory }) => {
                     <div className="buttons-liked">
                       <i className="bi bi-heart"></i>
                     </div>
-                  </div>
+                  </div> */}
                   <div
                     className="card-body"
                     style={{
@@ -139,20 +139,23 @@ const Home = ({ selectedCategory }) => {
                       >
                         {name.toUpperCase()}
                       </h5>
-                      <i className="card-brand" style={{ fontStyle: "italic" }}>
-                        {"~ " + brand}
+                      <span className="card-brand">
+                        by    <i style={{ fontStyle: "italic" }}>
+                        { brand}
                       </i>
+                      </span>
+                   
                     </div>
                     <div>
                       <h5
                         className="card-text"
-                        style={{ fontWeight: "600", margin: "5px 0" }}
+                        style={{ fontWeight: "600", margin: "10px 0" }}
                       >
                         {"$" + price}
                       </h5>
                       <button
                         className="btn btn-primary"
-                        style={{ width: "100%" }}
+                          style={{ width: "100%" , marginTop: "15px"}}
                         onClick={(e) => {
                           e.preventDefault();
                           addToCart(product);
